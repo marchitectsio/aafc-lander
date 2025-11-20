@@ -15,8 +15,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
+  font-family: var(--font-display) !important;
   letter-spacing: 0.02em;
+  font-weight: 700;
 }
 
 * {
