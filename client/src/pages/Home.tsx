@@ -153,10 +153,12 @@ export default function Home() {
 
           {/* PARTNER WITH US Button - Far Right */}
           <Button
+            asChild
             className="px-4 py-2 bg-[#E3A857] hover:bg-transparent hover:border-2 hover:border-[#E3A857] text-black hover:text-[#E3A857] font-bold text-sm rounded-lg transition-all duration-300 shadow-lg"
-            onClick={() => window.open('https://app.youform.com/forms/r9uihypu', '_blank')}
           >
-            PARTNER WITH US
+            <a href="https://app.youform.com/forms/r9uihypu" target="_blank" rel="noopener noreferrer">
+              PARTNER WITH US
+            </a>
           </Button>
         </div>
       </nav>
@@ -187,16 +189,20 @@ export default function Home() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delayed-5">
             <Button
+              asChild
               className="px-8 py-3 bg-[#E3A857] hover:bg-transparent hover:border-2 hover:border-[#E3A857] text-black hover:text-[#E3A857] font-bold text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-              onClick={() => window.open('https://app.youform.com/forms/f8xnzrci', '_blank')}
             >
-              Apply Now
+              <a href="https://app.youform.com/forms/f8xnzrci" target="_blank" rel="noopener noreferrer">
+                Apply Now
+              </a>
             </Button>
             <Button
+              asChild
               className="px-8 py-3 border-2 border-[#E3A857] bg-transparent hover:bg-[#E3A857] text-[#E3A857] hover:text-black font-bold text-lg rounded-lg transition-all duration-300 hover:border-[#E3A857]"
-              onClick={() => window.open('https://app.youform.com/forms/r9uihypu', '_blank')}
             >
-              Partner with Us
+              <a href="https://app.youform.com/forms/r9uihypu" target="_blank" rel="noopener noreferrer">
+                Partner with Us
+              </a>
             </Button>
           </div>
         </div>
