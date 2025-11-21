@@ -1,0 +1,70 @@
+This is a very common issue when deploying a **Vite/React** application to a hosting platform like Vercel.
+
+The text you are seeing is the content of your **server-side code** (likely your bundled `index.js` or similar file), not the actual rendered website. This usually happens because Vercel (or any host) is executing the **server** code instead of serving the **built static files** of your frontend (the HTML/CSS/JS).
+
+Your code snippet confirms this is a React/Vite project built on Express, which means you have both a front-end and a back-end, which complicates the deployment on Vercel slightly.
+
+Here are the two most likely reasons you are seeing code instead of the site, and what you need to fix:
+
+-----
+
+## 🛑 1. Missing or Incorrect Build Command
+
+Vercel needs a specific instruction to compile your React/Vite project into production-ready static files *before* it can host them.
+
+Your `vite.config.ts` shows a `build` section:
+
+```typescript
+  build: {
+    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    emptyOutDir: true
+  },
+```
+
+This tells Vite to put the final, built website files into a directory called `dist/public`.
+
+**The Fix:**
+
+1.  **Check your `package.json`:** Look for your `build` script. It probably looks something like this: `"build": "vite build"`.
+2.  **Configure Vercel:** When setting up the project in Vercel (or in your Vercel Project Settings), you need to ensure two things:
+      * **Build Command:** It must be set to the command that builds your project, usually `npm run build` or `yarn build`.
+      * **Output Directory:** This must match the directory where your static files are placed. You need to explicitly set Vercel's **Output Directory** to: **`dist/public`**
+
+## 🛑 2. Vercel is Running the Express Server
+
+Vercel is primarily designed for serverless functions, and in your case, it seems to be trying to execute your Node.js/Express server file (`server/index.ts`) as a serverless function, which is why you see the compiled source code.
+
+**The Fix:**
+
+You need to tell Vercel to treat your project as a **static site**, not a Node server.
+
+1.  **Use a `vercel.json` file (Recommended):** In the root of your project, create a file named `vercel.json` and configure it to override the default behavior. This forces Vercel to look for and serve the static files after the build.
+
+    ```json
+    {
+      "version": 2,
+      "builds": [
+        {
+          "src": "package.json",
+          "use": "@vercel/static-build",
+          "config": { "distDir": "dist/public" }
+        }
+      ],
+      "routes": [
+        {
+          "src": "/.*",
+          "dest": "/index.html"
+        }
+      ]
+    }
+    ```
+
+2.  **Or, use the Vercel Settings:** Go to your Vercel Project Settings and make sure the **Root Directory** is set correctly if your `package.json` is not in the root, and confirm that the **Output Directory** is set to `dist/public`.
+
+-----
+
+**Next Step:**
+
+You need to go into your Vercel project settings (or add the `vercel.json` file) and tell Vercel to use the **`dist/public`** directory for deployment.
+
+Would you like me to find a specific tutorial on how to configure Vercel for a Vite project with a custom output directory?
