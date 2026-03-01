@@ -184,7 +184,7 @@ export default function Home() {
               <a href="https://app.youform.com/forms/r9uihypu" target="_blank" rel="noopener noreferrer">
                 <span className="absolute inset-0 -z-10 origin-left scale-x-0 bg-[#E4AC44] transition-transform duration-300 ease-out group-hover:scale-x-100" />
                 <span className="flex items-center gap-2 transition-colors duration-300 group-hover:text-[#0A152A]">
-                  Partner With Us <ArrowRight size={16} />
+                  Partner with Us <ArrowRight size={16} />
                 </span>
               </a>
             </Button>
@@ -216,7 +216,7 @@ export default function Home() {
             className="mt-8 rounded-xl bg-[#E4AC44] py-4 text-lg font-bold uppercase tracking-wide text-[#0A152A] transition-transform active:scale-95"
             onClick={() => window.open("https://app.youform.com/forms/r9uihypu", "_blank")}
           >
-            Partner With Us
+            Partner with Us
           </Button>
         </div>
       )}
@@ -280,7 +280,7 @@ export default function Home() {
             >
               <a href="https://app.youform.com/forms/r9uihypu" target="_blank" rel="noopener noreferrer">
                 <span className="absolute inset-0 -z-10 origin-bottom scale-y-0 bg-[#E4AC44] transition-transform duration-300 ease-out group-hover:scale-y-100" />
-                <span className="transition-colors duration-300 group-hover:text-[#0A152A]">Partner With Us</span>
+                <span className="transition-colors duration-300 group-hover:text-[#0A152A]">Partner with Us</span>
               </a>
             </Button>
           </div>
@@ -363,7 +363,7 @@ export default function Home() {
                     </button>
                     <div className="absolute bottom-0 left-0 w-full translate-y-4 bg-gradient-to-t from-[#0A152A] via-[#0A152A]/80 to-transparent p-8 transition-transform duration-500 group-hover:translate-y-0">
                       <p className="text-xl font-bold text-white opacity-0 transition-opacity duration-500 delay-100 group-hover:opacity-100">
-                        Building disciplined digital leaders
+                        Building sustainable futures through creativity, discipline, and innovation
                       </p>
                     </div>
                   </div>
@@ -541,7 +541,7 @@ export default function Home() {
                   className="w-full shrink-0 rounded-full border-2 border-[#E4AC44] bg-transparent px-8 py-3 font-bold uppercase tracking-wide text-[#E4AC44] transition-all duration-200 hover:scale-105 hover:bg-[#E4AC44] hover:text-[#0A152A] active:scale-95 md:w-auto"
                   onClick={() => window.open("https://app.youform.com/forms/r9uihypu", "_blank")}
                 >
-                  Partner With Us
+                  Partner with Us
                 </Button>
               </div>
             </ScrollReveal>
@@ -564,8 +564,8 @@ export default function Home() {
               <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">Programs</h4>
               <ul className="space-y-4 text-sm font-medium text-white/60">
                 {[
-                  "Creative & Digital Innovation",
-                  "Athletic Leadership",
+                  "Creative and Digital Innovation",
+                  "Athletic Leadership and Technology",
                   "Community Impact",
                 ].map((link) => (
                   <li key={link}>
@@ -580,7 +580,7 @@ export default function Home() {
             <div>
               <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">Get Involved</h4>
               <ul className="space-y-4 text-sm font-medium text-white/60">
-                {["Apply Now", "Partner With Us", "Contact"].map((link) => (
+                {["Apply Now", "Partner with Us", "Contact"].map((link) => (
                   <li key={link}>
                     <a href="#join" className="inline-block transition-transform hover:translate-x-1 hover:text-[#E4AC44]">
                       {link}
